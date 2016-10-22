@@ -1,0 +1,81 @@
+Return-Path: <john@csirtgadgets.org>
+X-Original-To: john@csirtgadgets.org
+Delivered-To: john@csirtgadgets.org
+Received: from MBP.local (c-192-168-35-200.hsd1.in.comcast.net [192.168.35.200])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	(Authenticated sender: john)
+	by mail.csirtgadgets.com (Postfix) with ESMTPSA id 8FC2A1CCC1C2
+	for <john@csirtgadgets.org>; Wed, 15 Jul 2015 15:37:50 +0000 (UTC)
+Subject: Fwd: Fwd: this is a html test
+References: <55A67DE7.7030801@mail.csirtgadgets.com>
+To: John <john@csirtgadgets.org>
+From: John <john@csirtgadgets.org>
+X-Forwarded-Message-Id: <55A67DE7.7030801@mail.csirtgadgets.com>
+Message-ID: <55A67E4E.9080109@mail.csirtgadgets.com>
+Date: Wed, 15 Jul 2015 11:37:50 -0400
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:38.0)
+ Gecko/20100101 Thunderbird/38.1.0
+MIME-Version: 1.0
+In-Reply-To: <55A67DE7.7030801@mail.csirtgadgets.com>
+Content-Type: multipart/mixed;
+ boundary="------------000307010105080601090205"
+
+This is a multi-part message in MIME format.
+--------------000307010105080601090205
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+forward attachment as inline?
+
+
+-------- Forwarded Message --------
+Subject: 	Fwd: this is a html test
+Date: 	Wed, 15 Jul 2015 11:36:07 -0400
+From: 	John <john@csirtgadgets.org>
+To: 	John <john@csirtgadgets.org>
+
+
+
+phishing message attached
+
+
+
+
+--------------000307010105080601090205
+Content-Type: message/rfc822;
+ name="this is a html test.eml"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+ filename="this is a html test.eml"
+
+Return-Path: <john@csirtgadgets.org>
+X-Original-To: john@csirtgadgets.org
+Delivered-To: john@csirtgadgets.org
+Received: from MBP.local (c-192-168-35-200.hsd1.in.comcast.net [192.168.35.200])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	(Authenticated sender: john)
+	by mail.csirtgadgets.com (Postfix) with ESMTPSA id 2279A1CCC1C2
+	for <john@csirtgadgets.org>; Wed, 15 Jul 2015 15:35:21 +0000 (UTC)
+To: John <john@csirtgadgets.org>
+From: John <john@csirtgadgets.org>
+Subject: this is a html test
+X-Enigmail-Draft-Status: N1010
+Message-ID: <55A67DB8.7020500@mail.csirtgadgets.com>
+Date: Wed, 15 Jul 2015 11:35:20 -0400
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:38.0)
+ Gecko/20100101 Thunderbird/38.1.0
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+give me your credentials
+
+http://www.example.com
+
+
+
+
+--------------000307010105080601090205--
+

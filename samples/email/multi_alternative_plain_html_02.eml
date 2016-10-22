@@ -1,0 +1,22 @@
+MIME-Version: 1.0
+Received: by 10.36.27.135 with HTTP; Mon, 6 Jul 2015 10:51:11 -0700 (PDT)
+Date: Mon, 6 Jul 2015 13:51:11 -0400
+Delivered-To: john@csirtgadgets.org
+Message-ID: <CAD8JXeom4q607Vx4J=9MR0VMM1M_vVYm3K9sXCD5-_8uj_BHsA@mail.gmail.com>
+Subject: test2 (text plain)
+From: John <john@csirtgadgets.org>
+To: John <john@csirtgadgets.org>
+Content-Type: multipart/alternative; boundary="f46d042a0a5519988c051a388de8"
+
+--f46d042a0a5519988c051a388de8
+Content-Type: text/plain; charset=UTF-8
+
+http://www.indiana.edu
+
+
+--f46d042a0a5519988c051a388de8
+Content-Type: text/html; charset=UTF-8
+
+<div dir="ltr"><a href="http://www.indiana.edu">http://www.indiana.edu</a><div><br></div><div>-g</div></div>
+
+--f46d042a0a5519988c051a388de8--

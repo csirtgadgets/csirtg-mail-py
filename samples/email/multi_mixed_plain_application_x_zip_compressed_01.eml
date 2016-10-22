@@ -1,0 +1,54 @@
+Return-Path: <larry@example.com>
+X-Original-To: larry@example.com
+Delivered-To: larry@example.com
+Received: from mail-ig0-f177.google.com (mail-ig0-f177.google.com [209.85.213.177])
+    (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+    (No client certificate requested)
+    by mail.example.com (Postfix) with ESMTPS id 17D421CCC7C2
+    for <larry@example.com>; Fri, 30 Oct 2015 15:33:14 +0000 (UTC)
+Received: by igdg1 with SMTP id g1so14238051igd.1
+        for <larry@example.com>; Fri, 30 Oct 2015 08:33:13 -0700 (PDT)
+X-Received: by 10.50.67.18 with SMTP id j18mr3840565igt.43.1446219193601;
+        Fri, 30 Oct 2015 08:33:13 -0700 (PDT)
+Received: from example.localdomain ([192.168.1.1])
+        by smtp.gmail.com with ESMTPSA id g10sm1084581igy.22.2015.10.30.08.33.12
+        for larry@example.com
+        (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 30 Oct 2015 08:33:13 -0700 (PDT)
+To: Larry <larry@example.com>
+From: Larry <larry@example.com>
+Subject: zip attached
+Message-ID: <56338DB7.9050907@example.com>
+Date: Fri, 30 Oct 2015 11:33:11 -0400
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:38.0)
+ Gecko/20100101 Thunderbird/38.3.0
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="------------020603050205080602060904"
+
+This is a multi-part message in MIME format.
+--------------020603050205080602060904
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+See the attached zip file
+
+--------------020603050205080602060904
+Content-Type: application/x-zip-compressed;
+ name="read_me.txt.zip"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="read_me.txt.zip"
+
+UEsDBBQACAAIAOdbXkcAAAAAAAAAAAAAAAALABAAcmVhZF9tZS50eHRVWAwAXo0zVkGNM1b1
+ARQA80jNyclXCM8vyklRBABQSwcIoxwpHA4AAAAMAAAAUEsDBAoAAAAAAP1bXkcAAAAAAAAA
+AAAAAAAJABAAX19NQUNPU1gvVVgMAG6NM1ZujTNW9QEUAFBLAwQUAAgACADnW15HAAAAAAAA
+AAAAAAAAFgAQAF9fTUFDT1NYLy5fcmVhZF9tZS50eHRVWAwAXo0zVkGNM1b1ARQAY2AVY2dg
+YmDwTUxW8A9WiFCAApAYAycQGwFxJRCD+KuBmCHENSJEMSg5gwEncAwJCYIyQTrmADE/mhJG
+hLh4cn6uXmJBQU6qXkhqRYlrXnJ+SmZeOlAyNMRN18La0NjEyNDc0sIEAFBLBwhvz4AVZwAA
+AKsAAABQSwECFQMUAAgACADnW15HoxwpHA4AAAAMAAAACwAMAAAAAAAAAABApIEAAAAAcmVh
+ZF9tZS50eHRVWAgAXo0zVkGNM1ZQSwECFQMKAAAAAAD9W15HAAAAAAAAAAAAAAAACQAMAAAA
+AAAAAABA/UFXAAAAX19NQUNPU1gvVVgIAG6NM1ZujTNWUEsBAhUDFAAIAAgA51teR2/PgBVn
+AAAAqwAAABYADAAAAAAAAAAAQKSBjgAAAF9fTUFDT1NYLy5fcmVhZF9tZS50eHRVWAgAXo0z
+VkGNM1ZQSwUGAAAAAAMAAwDYAAAASQEAAAAA
+--------------020603050205080602060904--

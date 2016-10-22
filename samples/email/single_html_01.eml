@@ -1,0 +1,80 @@
+Received: from ironport.csirtgadgets.org (192.168.1.27) by mail01.csirtgadgets.org
+ (192.168.1.38) with Microsoft SMTP Server id 14.3.224.2; Fri, 17 Apr 2015
+ 02:46:40 -0600
+X-SBRS: 5.3
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: A2BOEgCNxzBVmSYBe4FBHBEBBYI+Sz5ctReCXUqNJisBgVKGLAWBYw8BAQEBAQEBEQEBAQEBCAsLBxQuQQWDUQEECwc4CUYJASkEAQEvOyoChTUpVwENcAZeBAEINqI5kSCCBwocARl9L4ENjxWPQhEBD1MZBIEBgSwjIIEWAQSJLoFYihiHP4xag0WBAIJOgWcBAQEBBgEBAQEBgh1JAg4BE4EEBxdiEwYdCQEBBQ
+X-IPAS-Result: A2BOEgCNxzBVmSYBe4FBHBEBBYI+Sz5ctReCXUqNJisBgVKGLAWBYw8BAQEBAQEBEQEBAQEBCAsLBxQuQQWDUQEECwc4CUYJASkEAQEvOyoChTUpVwENcAZeBAEINqI5kSCCBwocARl9L4ENjxWPQhEBD1MZBIEBgSwjIIEWAQSJLoFYihiHP4xag0WBAIJOgWcBAQEBBgEBAQEBgh1JAg4BE4EEBxdiEwYdCQEBBQ
+X-IronPort-AV: E=Sophos;i="5.11,593,1422946800"; 
+   d="scan'208";a="197005657"
+Received: from mail02.csirtgadgets.org (HELO mail01.csirtgadgets.org)
+ ([192.168.1.38])  by ironport.csirtgadgets.org with ESMTP; 17 Apr 2015 02:46:40 -0600
+Received: from ironport.csirtgadgets.org (192.168.1.27) by mail01.csirtgadgets.org
+ (192.168.1.38) with Microsoft SMTP Server id 14.3.224.2; Fri, 17 Apr 2015
+ 02:46:40 -0600
+Subject: [Phish?] Dear e-mail user.
+X-SBRS: 5.5
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: A0BFDACNxzBVmwOHWD5BHBEBBYI+Sz5ctReCXUqNJisBgVKGLAWBYw8BAQEBAQEBEQEBAQEBCAkLCRQuQQWDTQEBAQEBBAEBAQgHOAlGCQEpBAEBLzsqAoU1AQEBAQEkVwENcAEBAQECYgEINqI5kSCCBwocARl9L4ENjxWPQhEBD1MZBIEBgSwjIIEWAQSJLotwhz+MWoNFgQCCToFnAQEIAQEBAYIeSQIOAROBBAcXYhMGHQkBAQU
+X-IPAS-Result: A0BFDACNxzBVmwOHWD5BHBEBBYI+Sz5ctReCXUqNJisBgVKGLAWBYw8BAQEBAQEBEQEBAQEBCAkLCRQuQQWDTQEBAQEBBAEBAQgHOAlGCQEpBAEBLzsqAoU1AQEBAQEkVwENcAEBAQECYgEINqI5kSCCBwocARl9L4ENjxWPQhEBD1MZBIEBgSwjIIEWAQSJLotwhz+MWoNFgQCCToFnAQEIAQEBAYIeSQIOAROBBAcXYhMGHQkBAQU
+X-IronPort-AV: E=Sophos;i="5.11,593,1422946800"; 
+   d="scan'208";a="197005646"
+Received: from s002is01spam.goteborg.se (HELO mx10.goteborg.se)
+ ([62.88.135.3])  by ironport.csirtgadgets.org with ESMTP; 17 Apr 2015 02:46:38 -0600
+Authentication-Results: mx10.goteborg.se; dkim=neutral (message not signed) header.i=none
+Received-SPF: None (mx10.goteborg.se: no sender authenticity
+  information available from domain of
+  ermanda.shala@angered.goteborg.se) identity=pra;
+  client-ip=193.44.130.40; receiver=mx10.goteborg.se;
+  envelope-from="ermanda.shala@angered.goteborg.se";
+  x-sender="ermanda.shala@angered.goteborg.se";
+  x-conformance=sidf_compatible
+Received-SPF: Pass (mx10.goteborg.se: domain of
+  ermanda.shala@angered.goteborg.se designates 193.44.130.40 as
+  permitted sender) identity=mailfrom; client-ip=193.44.130.40;
+  receiver=mx10.goteborg.se;
+  envelope-from="ermanda.shala@angered.goteborg.se";
+  x-sender="ermanda.shala@angered.goteborg.se";
+  x-conformance=sidf_compatible; x-record-type="v=spf1"
+Received-SPF: None (mx10.goteborg.se: no sender authenticity
+  information available from domain of
+  postmaster@s002is13mta.goteborg.se) identity=helo;
+  client-ip=193.44.130.40; receiver=mx10.goteborg.se;
+  envelope-from="ermanda.shala@angered.goteborg.se";
+  x-sender="postmaster@s002is13mta.goteborg.se";
+  x-conformance=sidf_compatible
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: A2C/EACNxzBVmSiCLMFBHBEBBYI+Sz5ctReCXUqNJoF+hiwFgSZMAQEBAQEBEgEBAQEBCAsLBxQuQQWDTQEBAQEBBAEBAQgHOAlGCQEpBAEBLzsqAoU1AQEBAQEkVwENcAEBAQECYgEINqI5kSCCBwocARl9L4ENjxWPQhEBD1MZBIEBgSwjIIEWBYkui3CHP4xag0WBAIJOgWcBAQgBAQEBgh48DQIOAROBBAcXYhMGHQkBAQU
+X-IPAS-Result: A2C/EACNxzBVmSiCLMFBHBEBBYI+Sz5ctReCXUqNJoF+hiwFgSZMAQEBAQEBEgEBAQEBCAsLBxQuQQWDTQEBAQEBBAEBAQgHOAlGCQEpBAEBLzsqAoU1AQEBAQEkVwENcAEBAQECYgEINqI5kSCCBwocARl9L4ENjxWPQhEBD1MZBIEBgSwjIIEWBYkui3CHP4xag0WBAIJOgWcBAQgBAQEBgh48DQIOAROBBAcXYhMGHQkBAQU
+Received: from s002is13mta.goteborg.se ([193.44.130.40])  by mx10.goteborg.se
+ with ESMTP/TLS/DHE-RSA-AES256-SHA; 17 Apr 2015 10:44:18 +0200
+Received: from lnhubsr2.goteborg.se (s002adh02.goteborg.se [10.1.11.42])    by
+ s002is13mta.goteborg.se (8.13.8/8.13.8) with ESMTP id t3H8ee6v022383   for
+ <john@csirtgadgets.org>; Fri, 17 Apr 2015 10:44:16 +0200
+In-Reply-To:
+References:
+From: Ermanda Shala <ermanda.shala@angered.goteborg.se>
+Message-ID: <OF76FC2B1E.2CBC2DAF-ONC1257E2A.002FAA56-C1257E2A.002FAB6A@Intra-epost.goteborg.se>
+Date: Fri, 17 Apr 2015 10:40:40 +0200
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="ISO-8859-1"
+X-Notes-Item: john@csirtgadgets.org; name=AltBlindCopyTo
+Return-Path: MAILER-DAEMON@ironport.csirtgadgets.org
+X-MS-Exchange-Organization-AuthSource: mail01.csirtgadgets.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"><font face=3D"Default Sans Serif,Verdana,Arial,Helvetica,sans-serif" siz=
+e=3D"2">This message is from UPGRADING messaging center to all email accoun=
+t =0Downers. We are currently upgrading our data base and e-mail account =
+=0Dcenter. We are deleting all unused email account to create space for new=
+=0D accounts. To prevent your account from being deactivated you will have =
+=0Dto update it.<br><br>TO CONFIRM YOUR ACCOUNT CLICK <a href=3D"http://con=
+firmyouraccountnow.jimdo.com"><b>HERE:</b></a><br><br>Warning!!!=0D All ema=
+il Account owners that refuse to update his or her account =0Dwithin two da=
+ys of receiving this email will lose his or her account =0Dpermanently.<br>=
+<br>Copyright =A9 2015. All rights reserved.<br><br>online Service Team.</f=
+ont>
+
+

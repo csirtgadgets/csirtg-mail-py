@@ -1,0 +1,66 @@
+Return-Path: <john@csirtgadgets.org>
+X-Original-To: john@csirtgadgets.org
+Delivered-To: john@csirtgadgets.org
+Received: from MBP.local (c-192-168-35-200.hsd1.in.comcast.net [192.168.35.200])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	(Authenticated sender: john)
+	by mail.csirtgadgets.org (Postfix) with ESMTPSA id 2C4761CCC1B0
+	for <john@csirtgadgets.org>; Wed, 15 Jul 2015 15:36:08 +0000 (UTC)
+References: <55A67DB8.7020500@mail.csirtgadgets.org>
+Subject: Fwd: this is a html test
+To: John <john@csirtgadgets.org>
+From: John <john@csirtgadgets.org>
+X-Forwarded-Message-Id: <55A67DB8.7020500@mail.csirtgadgets.org>
+Message-ID: <55A67DE7.7030801@mail.csirtgadgets.org>
+Date: Wed, 15 Jul 2015 11:36:07 -0400
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:38.0)
+ Gecko/20100101 Thunderbird/38.1.0
+MIME-Version: 1.0
+In-Reply-To: <55A67DB8.7020500@mail.csirtgadgets.org>
+Content-Type: multipart/mixed;
+ boundary="------------070202090607050808010007"
+
+This is a multi-part message in MIME format.
+--------------070202090607050808010007
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+phishing message attached
+
+--------------070202090607050808010007
+Content-Type: message/rfc822;
+ name="this is a html test.eml"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+ filename="this is a html test.eml"
+
+Return-Path: <john@csirtgadgets.org>
+X-Original-To: john@csirtgadgets.org
+Delivered-To: john@csirtgadgets.org
+Received: from MBP.local (c-192-168-35-200.hsd1.in.comcast.net [192.168.35.200])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	(Authenticated sender: john)
+	by mail.csirtgadgets.org (Postfix) with ESMTPSA id 2279A1CCC1C2
+	for <john@csirtgadgets.org>; Wed, 15 Jul 2015 15:35:21 +0000 (UTC)
+To: John <john@csirtgadgets.org>
+From: John <john@csirtgadgets.org>
+Subject: this is a html test
+X-Enigmail-Draft-Status: N1010
+Message-ID: <55A67DB8.7020500@mail.csirtgadgets.org>
+Date: Wed, 15 Jul 2015 11:35:20 -0400
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:38.0)
+ Gecko/20100101 Thunderbird/38.1.0
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+give me your credentials
+
+http://www.example.com
+
+
+
+--------------070202090607050808010007--
+
