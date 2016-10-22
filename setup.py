@@ -30,7 +30,7 @@ setup(
     name="csirtg_mail",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    description="",
+    description="the fastest way to parse mail",
     long_description="the fastest way to parse mail",
     url="https://github.com/csirtgadgets/csirtg-mail-py",
     license='LGPL3',
