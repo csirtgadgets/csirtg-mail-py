@@ -23,8 +23,11 @@ if sys.argv[-1] == 'test':
         err_msg = e.message.replace("No module named ", "")
         msg = "%s is not installed. Install your test requirments." % err_msg
         raise ImportError(msg)
-    os.system('py.test test -v --cov=csirtg_mail --cov-fail-under=50')
-    sys.exit()
+    r = os.system('py.test test -v --cov=csirtg_mail --cov-fail-under=50')
+    if r == 0:
+        sys.exit()
+    else:
+        raise RuntimeError('tests failed')
 
 setup(
     name="csirtg_mail",
