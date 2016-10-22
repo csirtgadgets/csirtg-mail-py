@@ -2,9 +2,9 @@ sudo: required
 dist: trusty
 language: python
 python:
-  - 2.7
-  - 3.4
-  - 3.5
+- 2.7
+- 3.4
+- 3.5
 
 install:
   - pip install -r dev_requirements.txt
@@ -22,7 +22,7 @@ deploy:
   provider: pypi
   user: wesyoung
   password:
-    secure: gJ98IKzZZB9HjkPPO9veNMZH2/gz78eQzUBYFgtt4FkT0QGb+9tYUrTOCgn7vaa1cPuS6Ntc8uAZUOKxxQuqaHTCalPuZhudiQHgllsa56lWcEK8c23byhd3gBXLfd9bKsgAVzZJKRebrhNzEEKw08z/6399Aa0C4iMFb6xfEwA=
+    secure: ZBAKlT269C1Hmx90t13Fro5ldcKP9nFAzATDwKDVvLI9bE53/dV3XjCk76pf69qYkMxf99Fvq02WzXPHEK7SQ7Kg/oQPnJRvhBNx4Mv1jtvztI8t1wi57PAYo5AgrY76gABPIgqpUsUlO01mMdk6j2Uf8z5dA5ylOVXwXrpQYLZ77YFruNT/WaeXAT9V7k5zXh7cQRzcTSJSQppWa/hrpw3MNCecAgYPJEl/TGKg063S1EAGm3yq10wJGN/J1nsEoGtidoihSfpuwxxbpeBC7dKzKVpxjqJjSN2Gxd05P9kT+8Ss+Ncz/8qpoqI3XBlwvo+ZHjg9AbVO8skk3WVZfd34wub9xaIQwO3x8ttU9+b24B0014ix0kFeQrqJsleHO9i9ZUO5tF4Qcl1011LkRNUxiBW2zGaz7PfI+VyNBG3Kix80ixweCF0QVvyKmZAuhCxyyR1uBiigYyz3IRuhcPvaGbB25Tn1PSblX2ef55QAKDE8Zu6t2Klv5WD0jIotBg/5bT8fwTMJRss58t62oOFIyVEbzuWTdFSU/cfZFUcPxy1/JITgSzGBwZmHbDK2qyoJRQm8rRRt7d6TmpV9BEcPLq98WTF4BpMLg88T/9WKgRc4fhc6V2bEgTL4LeYbFUIRIYH0aAYMenWU/dqwH73WNHhQvIxplT7G4Z+znvs=
   on:
     branch: master
     tags: true
