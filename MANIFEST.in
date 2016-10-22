@@ -1,2 +1,6 @@
 include versioneer.py
 include csirtg_mail/_version.py
+include requirements.txt
+include dev_requirements.txt
+include LICENSE README.md
+recursive-include samples *
