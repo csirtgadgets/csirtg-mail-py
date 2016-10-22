@@ -1,10 +1,15 @@
 import csirtg_mail
+from csirtg_mail.constants import PYVERSION
 
 TEST_FILE = 'samples/email/single_html_04.eml'
 
-with open(TEST_FILE, encoding='latin-1') as f:
-    email = f.read()
-    email = str(email)
+if PYVERSION > 2:
+    with open(TEST_FILE, encoding='latin-1') as f:
+        email = f.read()
+        email = str(email)
+else:
+    with open(TEST_FILE) as f:
+        email = f.read()
 
 results = csirtg_mail.parse_email_from_string(email)
 
