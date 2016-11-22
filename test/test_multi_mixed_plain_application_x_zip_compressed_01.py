@@ -1,9 +1,14 @@
 import csirtg_mail
+from csirtg_mail.constants import PYVERSION
 
 TEST_FILE = 'samples/email/multi_mixed_plain_application_x_zip_compressed_01.eml'
 
-with open(TEST_FILE, encoding='utf-8') as f:
-    email = f.read()
+if PYVERSION > 2:
+    with open(TEST_FILE, encoding='utf-8') as f:
+        email = f.read()
+else:
+    with open(TEST_FILE) as f:
+        email = f.read()
 
 results = csirtg_mail.parse_email_from_string(email)
 

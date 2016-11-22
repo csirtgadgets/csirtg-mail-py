@@ -9,15 +9,15 @@ results = csirtg_mail.parse_email_from_string(email)
 
 
 def test_message_headers_from():
-    assert results[0]['headers']['from'][0] == 'Bobbi Summerfield <SummerfieldBobbi094@kritiproductions.com>'
+    assert results[0]['headers']['from'][0].startswith('Bobbi Summerfield')
 
 
 def test_message_headers_reply_to():
-    assert results[0]['headers']['reply-to'][0].startswith('king <king@yahoo.com>')
+    assert results[0]['headers']['reply-to'][0].startswith('king')
 
 
 def test_message_headers_to():
-    assert results[0]['headers']['to'][0].startswith('king <king@yahoo.com>')
+    assert results[0]['headers']['to'][0].startswith('king')
 
 
 def test_message_headers_subject():
