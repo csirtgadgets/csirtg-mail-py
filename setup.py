@@ -23,11 +23,23 @@ if sys.argv[-1] == 'test':
         err_msg = e.message.replace("No module named ", "")
         msg = "%s is not installed. Install your test requirments." % err_msg
         raise ImportError(msg)
-    r = os.system('py.test test -v --cov=csirtg_mail --cov-fail-under=50')
+    r = os.system('pytest test -v --cov=csirtg_mail --cov-fail-under=50')
     if r == 0:
         sys.exit()
     else:
         raise RuntimeError('tests failed')
+
+cmds = [
+    'csirtg-mail=csirtg_mail.client:main'
+]
+
+try:
+    import zyre
+    cmds.append(
+        'csirtg-mail-zyre=csirtg_mail.zyre:main'
+    )
+except ImportError:
+    pass
 
 setup(
     name="csirtg_mail",
@@ -50,8 +62,6 @@ setup(
     packages=find_packages(),
     install_requires=reqs,
     entry_points={
-        'console_scripts': [
-            'csirtg-mail=csirtg_mail.client:main',
-        ]
+        'console_scripts': cmds
     },
 )
