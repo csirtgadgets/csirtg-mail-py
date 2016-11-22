@@ -33,14 +33,6 @@ cmds = [
     'csirtg-mail=csirtg_mail.client:main'
 ]
 
-try:
-    import zyre
-    cmds.append(
-        'csirtg-mail-zyre=csirtg_mail.zyre:main'
-    )
-except ImportError:
-    pass
-
 setup(
     name="csirtg_mail",
     version=versioneer.get_version(),
