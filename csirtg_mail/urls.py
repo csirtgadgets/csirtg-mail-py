@@ -8,7 +8,7 @@ except ImportError:
 
 from pprint import pprint
 
-RE_URL_PLAIN = r'(https?://[^\s>]+)'
+RE_URL_PLAIN = r'(https?://[^[\s>|^\"]+)'
 RE_URL_DEFANGED = r'(hxxps?://[^\s>]+)'
 RE_IPV4 = re.compile('^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}')
 # http://stackoverflow.com/a/17871737
@@ -105,7 +105,7 @@ def _extract_urls_text(content, defanged_urls=False):
     return urls
 
 
-def _extract_urls_html(body, defanged_urls=False):
+def _extract_urls_html(body, defanged_urls=False, images=False):
     urls = set()
     soup = BeautifulSoup(body, "lxml")
 
@@ -113,6 +113,14 @@ def _extract_urls_html(body, defanged_urls=False):
         if link.get('href'):
             if _url(link.get('href')):
                 urls.add(link.get('href'))
+
+    if not images:
+        return urls
+    
+    for link in soup.find_all('img'):
+        if link.get('src'):
+            if _url(link.get('src')):
+                urls.add(link.get('src'))
 
     return urls
 
