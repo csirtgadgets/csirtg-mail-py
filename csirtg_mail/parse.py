@@ -260,3 +260,63 @@ def parse_email_from_string(email, defanged_urls=False):
     results.append(d)
 
     return results
+
+# testing- use functions above
+from .utils import parse_headers
+import pyzmail
+from .constants import PYVERSION
+
+
+def from_string(data):
+    message = pyzmail.PyzMessage.factory(data)
+    headers = parse_headers(message)
+
+    # for mailpart in message.mailparts:
+    #     print '    %sfilename=%r alt_filename=%r type=%s charset=%s desc=%s size=%d' % ( \
+    #         '*' if mailpart.is_body else ' ', \
+    #         mailpart.filename, \
+    #         mailpart.sanitized_filename, \
+    #         mailpart.type, \
+    #         mailpart.charset, \
+    #         mailpart.part.get('Content-Description'), \
+    #         len(mailpart.get_payload()))
+    #
+    #     if mailpart.type.startswith('text/'):
+    #         # display first line of the text
+    #         payload, used_charset = pyzmail.decode_text(mailpart.get_payload(), mailpart.charset, None)
+    #         print '        >', payload.split('\\n')[0]
+
+    # is fwd
+
+    ## inline
+    ## attachment is .eml
+    ## is html
+    ## is txt
+    ## attachment is [.docx?|.zip|.html?|.xlsx?]
+    ## multiple .eml attachments
+    ## is html
+    ## is txt
+
+    if message.html_part:
+        body = message.html_part.get_payload()
+        try:
+            body = body.decode('utf-8')
+        except Exception:
+            body = body.decode('latin-1')
+        urls = _extract_urls(body, html=True)
+        email_addresses = _extract_email_addresses(body, html=True)
+    else:
+        body = message.text_part.get_payload()
+        try:
+            body = body.decode('utf-8')
+        except Exception:
+            body = body.decode('latin-1')
+        urls = _extract_urls(body)
+        email_addresses = _extract_email_addresses(body)
+
+    return {
+        'message': body,
+        'urls': list(urls),
+        'email_addresses': list(email_addresses),
+        'headers': headers
+    }
