@@ -299,18 +299,20 @@ def from_string(data):
 
     if message.html_part:
         body = message.html_part.get_payload()
-        urls = extract_urls(body, html=True)
-        email_addresses = extract_email_addresses(body, html=True)
-    else:
-        body = message.text_part.get_payload()
-        urls = extract_urls(body)
-        email_addresses = extract_email_addresses(body)
-
-    if PYVERSION == 2:
         try:
             body = body.decode('utf-8')
         except Exception:
             body = body.decode('latin-1')
+        urls = _extract_urls(body, html=True)
+        email_addresses = _extract_email_addresses(body, html=True)
+    else:
+        body = message.text_part.get_payload()
+        try:
+            body = body.decode('utf-8')
+        except Exception:
+            body = body.decode('latin-1')
+        urls = _extract_urls(body)
+        email_addresses = _extract_email_addresses(body)
 
     return {
         'message': body,

@@ -21,6 +21,11 @@ RE_EMAIL_ADDRESS = re.compile('([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)'
 def _extract_email_addresses_text(content):
     email_addresses = set()
 
+    from .constants import PYVERSION
+
+    if PYVERSION == 3:
+        content = str(content)
+
     found = re.findall(RE_EMAIL_ADDRESS, content)
 
     for address in found:
@@ -31,6 +36,11 @@ def _extract_email_addresses_text(content):
 
 def _extract_email_addresses_html(content):
     email_addresses = set()
+
+    from .constants import PYVERSION
+
+    if PYVERSION == 3:
+        content = str(content)
 
     soup = BeautifulSoup(content, "lxml")
 
@@ -94,7 +104,7 @@ def url_to_fqdn(s):
 def _extract_urls_text(content, defanged_urls=False):
     urls = set()
 
-    found = re.findall(RE_URL_PLAIN, content)
+    found = re.findall(RE_URL_PLAIN, content, re.MULTILINE)
     if defanged_urls:
         found = re.findall(RE_URL_DEFANGED, content)
 
@@ -127,6 +137,11 @@ def _extract_urls_html(body, defanged_urls=False, images=False):
 
 def extract_urls(content, html=False, defanged_urls=False):
     urls = set()
+
+    from .constants import PYVERSION
+
+    if PYVERSION == 3:
+        content = str(content)
 
     if content:
         if html:
