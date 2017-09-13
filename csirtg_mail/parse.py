@@ -194,7 +194,8 @@ def extract_urls(mail_parts, defanged_urls=False):
             if mail_part['is_body'].startswith('text/plain'):
                 l = _extract_urls(mail_part['decoded_body'], html=False, defanged_urls=defanged_urls)
                 links.update(l)
-    return links
+
+    return list(links)
 
 
 def extract_email_addresses(mail_parts):
@@ -209,7 +210,7 @@ def extract_email_addresses(mail_parts):
                 email_address = _extract_email_addresses(mail_part['decoded_body'], html=False)
                 email_addresses.update(email_address)
 
-    return email_addresses
+    return list(email_addresses)
 
 
 def flatten(s):

@@ -4,6 +4,7 @@ import textwrap
 from argparse import ArgumentParser
 from argparse import RawDescriptionHelpFormatter
 from pprint import pprint
+import json
 
 from csirtg_mail import parse_email_from_string
 
@@ -29,10 +30,14 @@ def main():
     )
 
     p.add_argument("-f", "--file", dest="file", help="specify email file")
+    p.add_argument("-d", "--debug", help="enable debugging", action="store_true")
 
     args = p.parse_args()
 
     loglevel = logging.INFO
+    if args.debug:
+        loglevel = logging.DEBUG
+
     console = logging.StreamHandler()
     logging.getLogger('').setLevel(loglevel)
     console.setFormatter(logging.Formatter(LOG_FORMAT))
@@ -50,7 +55,12 @@ def main():
     # parse email message
     results = parse_email_from_string(email)
 
-    pprint(results)
+    if args.debug:
+        results = json.dumps(results, indent=4)
+    else:
+        results = json.dumps(results)
+
+    print(results)
 
 
 if __name__ == "__main__":
