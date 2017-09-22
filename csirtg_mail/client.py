@@ -31,6 +31,7 @@ def main():
 
     p.add_argument("-f", "--file", dest="file", help="specify email file")
     p.add_argument("-d", "--debug", help="enable debugging", action="store_true")
+    p.add_argument("--urls", help="print URLS to stdout", action="store_true")
 
     args = p.parse_args()
 
@@ -54,6 +55,13 @@ def main():
 
     # parse email message
     results = parse_email_from_string(email)
+
+    if args.urls:
+        for e in results:
+            for u in e['urls']:
+                print(u)
+
+        raise SystemExit
 
     if args.debug:
         results = json.dumps(results, indent=4)
