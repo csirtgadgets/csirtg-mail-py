@@ -125,6 +125,7 @@ def get_messages_as_attachments(message):
     results = []
 
     msg = message.get_payload()
+
     if isinstance(msg, list):
         for z in msg:
             if z.get_content_type() == "message/rfc822":
@@ -298,6 +299,9 @@ def from_string(data):
     ## is html
     ## is txt
 
+    urls = set()
+    email_addresses = set()
+    attachments = []
     if message.html_part:
         body = message.html_part.get_payload()
         try:
@@ -307,17 +311,27 @@ def from_string(data):
         urls = _extract_urls(body, html=True)
         email_addresses = _extract_email_addresses(body, html=True)
     else:
-        body = message.text_part.get_payload()
-        try:
-            body = body.decode('utf-8')
-        except Exception:
-            body = body.decode('latin-1')
-        urls = _extract_urls(body)
-        email_addresses = _extract_email_addresses(body)
+        if message.text_part:
+            body = message.text_part.get_payload()
+            try:
+                body = body.decode('utf-8')
+            except Exception:
+                body = body.decode('latin-1')
+            urls = _extract_urls(body)
+            email_addresses = _extract_email_addresses(body)
+        else:
+            body = message.get_payload()
+            for p in body:
+                attachments.append({
+                    'type': p.get_content_type(),
+                    'attachment': str(p)
+                })
+            body = ''
 
     return {
         'message': body,
         'urls': list(urls),
         'email_addresses': list(email_addresses),
-        'headers': headers
+        'headers': headers,
+        'attachments': attachments
     }
