@@ -1,6 +1,4 @@
-# csirtg-mail-py
-
-The FASTEST way to parse email.
+# The FASTEST way to parse email.
 
 ```
 $ pip install csirtg_mail
