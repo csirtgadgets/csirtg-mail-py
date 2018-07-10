@@ -45,7 +45,7 @@ setup(
                "Topic :: System :: Networking",
                "Environment :: Other Environment",
                "Intended Audience :: Developers",
-               "License :: OSI Approved :: MPL2",
+               "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
                "Programming Language :: Python",
                ],
     keywords=['security'],
