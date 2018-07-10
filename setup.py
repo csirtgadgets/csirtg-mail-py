@@ -40,19 +40,25 @@ setup(
     description="the fastest way to parse mail",
     long_description="the fastest way to parse mail",
     url="https://github.com/csirtgadgets/csirtg-mail-py",
-    license='LGPL3',
+    license='MPL2',
     classifiers=[
                "Topic :: System :: Networking",
                "Environment :: Other Environment",
                "Intended Audience :: Developers",
-               "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+               "License :: OSI Approved :: MPL2",
                "Programming Language :: Python",
                ],
     keywords=['security'],
     author="Wes Young",
     author_email="wes@csirtgadgets.org",
     packages=find_packages(),
-    install_requires=reqs,
+    install_requires=[
+        'beautifulsoup4',
+        'pyzmail',
+        'chardet',
+        'lxml',
+        'html5lib'
+    ],
     entry_points={
         'console_scripts': cmds
     },
