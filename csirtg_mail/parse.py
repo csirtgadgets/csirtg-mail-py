@@ -120,6 +120,12 @@ def get_decoded_body(p, d):
 
     return d
 
+def get_transfer_encoding(headers):
+    return_value = None
+    for header_item in headers:
+        if header_item[0] == 'Content-Transfer-Encoding':
+            return_value = header_item[1]
+    return return_value
 
 def get_messages_as_attachments(message):
     results = []
@@ -134,7 +140,8 @@ def get_messages_as_attachments(message):
                     for attachment in attachments:
                         a = {
                             'type': z.get_content_type(),
-                            'attachment': str(attachment),
+                            'attachment': attachment.as_string(),
+                            'encoding': get_transfer_encoding(z._headers)
                         }
                         results.append(a)
     return results
@@ -226,7 +233,10 @@ def parse_attached_emails(attachments):
     flattened = []
     for a in attachments:
         if a['type'] == "message/rfc822":
-            d = parse_email_from_string(a['attachment'])
+            if a['encoding'] == 'base64':
+                d = parse_email_from_string(base64.b64decode(a['attachment']).decode()) 
+            else:    
+                d = parse_email_from_string(a['attachment'])
             flattened = flatten(d)
     return flattened
 
