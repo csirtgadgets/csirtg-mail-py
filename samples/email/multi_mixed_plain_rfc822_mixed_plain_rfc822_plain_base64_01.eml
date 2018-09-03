@@ -1,0 +1,79 @@
+Return-Path: <john@csirtgadgets.org>
+X-Original-To: john@csirtgadgets.org
+Delivered-To: john@csirtgadgets.org
+Received: from MBP.local (c-192-168-35-200.hsd1.in.comcast.net [192.168.35.200])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	(Authenticated sender: john)
+	by mail.csirtgadgets.com (Postfix) with ESMTPSA id BDD4C1CCC1C2
+	for <john@csirtgadgets.org>; Wed, 15 Jul 2015 15:37:01 +0000 (UTC)
+References: <55A67DE7.7030801@mail.csirtgadgets.com>
+Subject: Fwd: Fwd: this is a html test
+To: John <john@csirtgadgets.org>
+From: John <john@csirtgadgets.org>
+X-Forwarded-Message-Id: <55A67DE7.7030801@mail.csirtgadgets.com>
+Message-ID: <55A67E1D.7060207@mail.csirtgadgets.com>
+Date: Wed, 15 Jul 2015 11:37:01 -0400
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:38.0)
+ Gecko/20100101 Thunderbird/38.1.0
+MIME-Version: 1.0
+In-Reply-To: <55A67DE7.7030801@mail.csirtgadgets.com>
+Content-Type: multipart/mixed;
+ boundary="------------010807020306050303010805"
+
+This is a multi-part message in MIME format.
+--------------010807020306050303010805
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+forward attachment of attachment
+
+--------------010807020306050303010805
+Content-Type: message/rfc822;
+ name="Fwd: this is a html test.eml"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+ filename="Fwd: this is a html test.eml"
+
+Return-Path: <john@csirtgadgets.org>
+X-Original-To: john@csirtgadgets.org
+Delivered-To: john@csirtgadgets.org
+Received: from MBP.local (c-192-168-35-200.hsd1.in.comcast.net [192.168.35.200])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	(Authenticated sender: john)
+	by mail.csirtgadgets.com (Postfix) with ESMTPSA id 2C4761CCC1B0
+	for <john@csirtgadgets.org>; Wed, 15 Jul 2015 15:36:08 +0000 (UTC)
+References: <55A67DB8.7020500@mail.csirtgadgets.com>
+Subject: Fwd: this is a html test
+To: John <john@csirtgadgets.org>
+From: John <john@csirtgadgets.org>
+X-Forwarded-Message-Id: <55A67DB8.7020500@mail.csirtgadgets.com>
+Message-ID: <55A67DE7.7030801@mail.csirtgadgets.com>
+Date: Wed, 15 Jul 2015 11:36:07 -0400
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:38.0)
+ Gecko/20100101 Thunderbird/38.1.0
+MIME-Version: 1.0
+In-Reply-To: <55A67DB8.7020500@mail.csirtgadgets.com>
+Content-Type: multipart/mixed;
+ boundary="------------070202090607050808010007"
+
+This is a multi-part message in MIME format.
+--------------070202090607050808010007
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+phishing message attached
+
+--------------070202090607050808010007
+Content-Type: message/rfc822;
+ name="this is a html test.eml"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="this is a html test.eml"
+
+UmV0dXJuLVBhdGg6IDxqb2huQGNzaXJ0Z2FkZ2V0cy5vcmc+ClgtT3JpZ2luYWwtVG86IGpvaG5AY3NpcnRnYWRnZXRzLm9yZwpEZWxpdmVyZWQtVG86IGpvaG5AY3NpcnRnYWRnZXRzLm9yZwpSZWNlaXZlZDogZnJvbSBNQlAubG9jYWwgKGMtMTkyLTE2OC0zNS0yMDAuaHNkMS5pbi5jb21jYXN0Lm5ldCBbMTkyLjE2OC4zNS4yMDBdKQoJKHVzaW5nIFRMU3YxLjIgd2l0aCBjaXBoZXIgRUNESEUtUlNBLUFFUzEyOC1HQ00tU0hBMjU2ICgxMjgvMTI4IGJpdHMpKQoJKE5vIGNsaWVudCBjZXJ0aWZpY2F0ZSByZXF1ZXN0ZWQpCgkoQXV0aGVudGljYXRlZCBzZW5kZXI6IGpvaG4pCglieSBtYWlsLmNzaXJ0Z2FkZ2V0cy5jb20gKFBvc3RmaXgpIHdpdGggRVNNVFBTQSBpZCAyMjc5QTFDQ0MxQzIKCWZvciA8am9obkBjc2lydGdhZGdldHMub3JnPjsgV2VkLCAxNSBKdWwgMjAxNSAxNTozNToyMSArMDAwMCAoVVRDKQpUbzogSm9obiA8am9obkBjc2lydGdhZGdldHMub3JnPgpGcm9tOiBKb2huIDxqb2huQGNzaXJ0Z2FkZ2V0cy5vcmc+ClN1YmplY3Q6IHRoaXMgaXMgYSBodG1sIHRlc3QKWC1FbmlnbWFpbC1EcmFmdC1TdGF0dXM6IE4xMDEwCk1lc3NhZ2UtSUQ6IDw1NUE2N0RCOC43MDIwNTAwQG1haWwuY3NpcnRnYWRnZXRzLmNvbT4KRGF0ZTogV2VkLCAxNSBKdWwgMjAxNSAxMTozNToyMCAtMDQwMApVc2VyLUFnZW50OiBNb3ppbGxhLzUuMCAoTWFjaW50b3NoOyBJbnRlbCBNYWMgT1MgWCAxMC4xMDsgcnY6MzguMCkKIEdlY2tvLzIwMTAwMTAxIFRodW5kZXJiaXJkLzM4LjEuMApNSU1FLVZlcnNpb246IDEuMApDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9dXRmLTgKQ29udGVudC1UcmFuc2Zlci1FbmNvZGluZzogcXVvdGVkLXByaW50YWJsZQoKZ2l2ZSBtZSB5b3VyIGNyZWRlbnRpYWxzCgpodHRwOi8vd3d3LmV4YW1wbGUuY29tCg==
+
+--------------070202090607050808010007--
+
+--------------010807020306050303010805--

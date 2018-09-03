@@ -106,7 +106,7 @@ def _extract_urls_text(content, defanged_urls=False):
 
     found = re.findall(RE_URL_PLAIN, content, re.MULTILINE)
     if defanged_urls:
-        found = re.findall(RE_URL_DEFANGED, content)
+        found = re.findall(RE_URL_DEFANGED, content) + re.findall(RE_URL_PLAIN, content, re.MULTILINE)
 
     for u in found:
         if _url(u):
