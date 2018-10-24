@@ -10,13 +10,17 @@ from pprint import pprint
 
 RE_URL_PLAIN = r'(https?://[^[\s>|^\"]+)'
 RE_URL_DEFANGED = r'(hxxps?://[^\s>]+)'
-RE_IPV4 = re.compile('^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}')
+RE_IPV4 = re.compile(
+    '^(.+:.+@)?(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(:\d+)?$')
 # http://stackoverflow.com/a/17871737
-RE_IPV6 = re.compile('(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))')
+RE_IPV6 = re.compile('^(.+:.+@)?\[?(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\]?(:\d+)?$')
 # http://goo.gl/Cztyn2 -- probably needs more work
-RE_FQDN = re.compile('^((xn--)?(--)?[a-zA-Z0-9-_]+(-[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}(--p1ai)?$')
+RE_FQDN = re.compile(
+    '^(.+:.+@)?((xn--)?(--)?[a-zA-Z0-9-_]+(-[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}(--p1ai)?(:\d+)?$')
 RE_URI_SCHEMES = re.compile('^(https?|hxxps?|ftp)$')
-RE_EMAIL_ADDRESS = re.compile('([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)')
+RE_EMAIL_ADDRESS = re.compile(
+    '([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)')
+
 
 def _extract_email_addresses_text(content):
     email_addresses = set()
@@ -44,7 +48,8 @@ def _extract_email_addresses_html(content):
 
     soup = BeautifulSoup(content, "lxml")
 
-    email_addresses = re.findall(RE_EMAIL_ADDRESS, soup.get_text(separator=' '))
+    email_addresses = re.findall(
+        RE_EMAIL_ADDRESS, soup.get_text(separator=' '))
 
     return email_addresses
 
@@ -106,7 +111,8 @@ def _extract_urls_text(content, defanged_urls=False):
 
     found = re.findall(RE_URL_PLAIN, content, re.MULTILINE)
     if defanged_urls:
-        found = re.findall(RE_URL_DEFANGED, content) + re.findall(RE_URL_PLAIN, content, re.MULTILINE)
+        found = re.findall(RE_URL_DEFANGED, content) + \
+            re.findall(RE_URL_PLAIN, content, re.MULTILINE)
 
     for u in found:
         if _url(u):
@@ -126,7 +132,7 @@ def _extract_urls_html(body, defanged_urls=False, images=False):
 
     if not images:
         return urls
-    
+
     for link in soup.find_all('img'):
         if link.get('src'):
             if _url(link.get('src')):
