@@ -120,12 +120,14 @@ def get_decoded_body(p, d):
 
     return d
 
+
 def get_transfer_encoding(headers):
     return_value = None
     for header_item in headers:
         if header_item[0] == 'Content-Transfer-Encoding':
             return_value = header_item[1]
     return return_value
+
 
 def get_messages_as_attachments(message):
     results = []
@@ -197,10 +199,12 @@ def extract_urls(mail_parts, defanged_urls=False):
     for mail_part in mail_parts:
         if mail_part['is_body']:
             if mail_part['is_body'].startswith('text/html'):
-                l = _extract_urls(mail_part['decoded_body'], html=True, defanged_urls=defanged_urls)
+                l = _extract_urls(
+                    mail_part['decoded_body'], html=True, defanged_urls=defanged_urls)
                 links.update(l)
             if mail_part['is_body'].startswith('text/plain'):
-                l = _extract_urls(mail_part['decoded_body'], html=False, defanged_urls=defanged_urls)
+                l = _extract_urls(
+                    mail_part['decoded_body'], html=False, defanged_urls=defanged_urls)
                 links.update(l)
 
     return list(links)
@@ -212,10 +216,12 @@ def extract_email_addresses(mail_parts):
     for mail_part in mail_parts:
         if mail_part['is_body']:
             if mail_part['is_body'].startswith('text/html'):
-                email_address = _extract_email_addresses(mail_part['decoded_body'], html=True)
+                email_address = _extract_email_addresses(
+                    mail_part['decoded_body'], html=True)
                 email_addresses.update(email_address)
             if mail_part['is_body'].startswith('text/plain'):
-                email_address = _extract_email_addresses(mail_part['decoded_body'], html=False)
+                email_address = _extract_email_addresses(
+                    mail_part['decoded_body'], html=False)
                 email_addresses.update(email_address)
 
     return list(email_addresses)
@@ -234,8 +240,9 @@ def parse_attached_emails(attachments):
     for a in attachments:
         if a['type'] == "message/rfc822":
             if a['encoding'] == 'base64':
-                d = parse_email_from_string(base64.b64decode(a['attachment']).decode()) 
-            else:    
+                d = parse_email_from_string(
+                    base64.b64decode(a['attachment']).decode())
+            else:
                 d = parse_email_from_string(a['attachment'])
             flattened = flatten(d)
     return flattened
@@ -262,7 +269,8 @@ def parse_email_from_string(email, defanged_urls=False):
     d['urls'] = urls = extract_urls(mail_parts, defanged_urls=defanged_urls)
 
     # get email addresses from message body
-    d['body_email_addresses'] = email_addresses = extract_email_addresses(mail_parts)
+    d['body_email_addresses'] = email_addresses = extract_email_addresses(
+        mail_parts)
 
     # find encapsulated emails in attachments
     attached_emails = parse_attached_emails(attachments)
@@ -272,6 +280,7 @@ def parse_email_from_string(email, defanged_urls=False):
     results.append(d)
 
     return results
+
 
 # testing- use functions above
 from .utils import parse_headers
@@ -300,14 +309,14 @@ def from_string(data):
 
     # is fwd
 
-    ## inline
-    ## attachment is .eml
-    ## is html
-    ## is txt
-    ## attachment is [.docx?|.zip|.html?|.xlsx?]
-    ## multiple .eml attachments
-    ## is html
-    ## is txt
+    # inline
+    # attachment is .eml
+    # is html
+    # is txt
+    # attachment is [.docx?|.zip|.html?|.xlsx?]
+    # multiple .eml attachments
+    # is html
+    # is txt
 
     urls = set()
     email_addresses = set()
