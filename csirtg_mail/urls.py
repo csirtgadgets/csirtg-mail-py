@@ -9,7 +9,7 @@ except ImportError:
 from pprint import pprint
 
 RE_URL_PLAIN = r'(https?://[^\s>|^\"]+)'
-RE_URL_DEFANGED = r'(hxxps?://[^\s>]+)'
+RE_URL_DEFANGED = r'((?:hxxps?:\/\/.*?(?=\/))(?:.*?(?=\s)))'
 RE_IPV4 = re.compile(
     '^(.+:.+@)?(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(:\d+)?$')
 # http://stackoverflow.com/a/17871737
@@ -115,6 +115,10 @@ def _extract_urls_text(content, defanged_urls=False):
             re.findall(RE_URL_PLAIN, content, re.MULTILINE)
 
     for u in found:
+        u = u.replace(" ", "")
+        if defanged_urls:
+            urls.add(u)
+        else:
         if _url(u):
             urls.add(u)
 
