@@ -9,7 +9,7 @@ except ImportError:
 from pprint import pprint
 
 RE_URL_PLAIN = r'(https?://[^\s>|^\"]+)'
-RE_URL_DEFANGED = r'(hxxps?://[^\s>]+)'
+RE_URL_DEFANGED = r'((?:hxxps?:\/\/.*?(?=\/))(?:.*?(?=\s)))'
 RE_IPV4 = re.compile(
     '^(.+:.+@)?(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(:\d+)?$')
 # http://stackoverflow.com/a/17871737
@@ -19,7 +19,7 @@ RE_FQDN = re.compile(
     '^(.+:.+@)?((xn--)?(--)?[a-zA-Z0-9-_]+(-[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}(--p1ai)?(:\d+)?$')
 RE_URI_SCHEMES = re.compile('^(https?|hxxps?|ftp)$')
 RE_EMAIL_ADDRESS = re.compile(
-    '([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)')
+    '(?:%\w\w)?([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)')
 
 
 def _extract_email_addresses_text(content):
@@ -48,8 +48,19 @@ def _extract_email_addresses_html(content):
 
     soup = BeautifulSoup(content, "lxml")
 
-    email_addresses = re.findall(
+    # Look in anchor links for email addresses - common with mailto:
+    for link in soup.find_all("a"):
+        found = re.findall(
+            RE_EMAIL_ADDRESS, str(link))
+        for address in found:
+            email_addresses.add(address)
+
+    # look in the text of the email
+    found = re.findall(
         RE_EMAIL_ADDRESS, soup.get_text(separator=' '))
+
+    for address in found:
+        email_addresses.add(address)
 
     return email_addresses
 
@@ -115,8 +126,12 @@ def _extract_urls_text(content, defanged_urls=False):
             re.findall(RE_URL_PLAIN, content, re.MULTILINE)
 
     for u in found:
-        if _url(u):
+        u = u.replace(" ", "")
+        if defanged_urls:
             urls.add(u)
+        else:
+            if _url(u):
+                urls.add(u)
 
     return urls
 
