@@ -7,6 +7,8 @@ from pyzmail.parse import decode_mail_header as pyzmail_decode_mail_header
 from pyzmail.parse import decode_text as pyzmail_decode_text
 from csirtg_mail.urls import extract_urls as _extract_urls
 from csirtg_mail.urls import extract_email_addresses as _extract_email_addresses
+from csirtg_mail.btc import extract_btcs as _extract_btcs
+
 
 RE_URL_PLAIN = r'(https?://[^\s>]+)'
 
@@ -210,6 +212,21 @@ def extract_urls(mail_parts, defanged_urls=False):
     return list(links)
 
 
+def extract_btcs(mail_parts):
+    btcs = set()
+
+    # results = parse_email_from_string(email)
+
+    for mail_part in mail_parts:
+        if mail_part['is_body']:
+            if mail_part['is_body'].startswith('text/plain'):
+                l = _extract_btcs(
+                    mail_part['decoded_body'], html=False)
+                btcs.update(l)
+
+    return list(btcs)
+
+
 def extract_email_addresses(mail_parts):
     email_addresses = set()
 
@@ -267,6 +284,9 @@ def parse_email_from_string(email, defanged_urls=False):
 
     # get urls from message body
     d['urls'] = urls = extract_urls(mail_parts, defanged_urls=defanged_urls)
+
+    # get BTC addresses from message body
+    d['btcs'] = btcs = extract_btcs(mail_parts)
 
     # get email addresses from message body
     d['body_email_addresses'] = email_addresses = extract_email_addresses(
