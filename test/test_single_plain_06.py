@@ -13,5 +13,5 @@ def test_message_headers():
 
 
 def test_extract_btcs():
-    print(results[0]['urls'])
+    print(results[0]['btcs'])
     assert "1KhDTLk95fZQBd5tUXj4123459bBAji2DB" in results[0]['btcs']
