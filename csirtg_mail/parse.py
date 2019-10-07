@@ -193,7 +193,7 @@ def parse_message_parts(message_parts):
     return mail_parts
 
 
-def extract_urls(mail_parts, defanged_urls=False):
+def extract_urls(mail_parts, defanged_urls=False, sanitize_urls=False):
     links = set()
 
     # results = parse_email_from_string(email)
@@ -202,11 +202,11 @@ def extract_urls(mail_parts, defanged_urls=False):
         if mail_part['is_body']:
             if mail_part['is_body'].startswith('text/html'):
                 l = _extract_urls(
-                    mail_part['decoded_body'], html=True, defanged_urls=defanged_urls)
+                    mail_part['decoded_body'], html=True, defanged_urls=defanged_urls, sanitize_urls=sanitize_urls)
                 links.update(l)
             if mail_part['is_body'].startswith('text/plain'):
                 l = _extract_urls(
-                    mail_part['decoded_body'], html=False, defanged_urls=defanged_urls)
+                    mail_part['decoded_body'], html=False, defanged_urls=defanged_urls, sanitize_urls=sanitize_urls)
                 links.update(l)
 
     return list(links)
@@ -265,7 +265,8 @@ def parse_attached_emails(attachments):
     return flattened
 
 
-def parse_email_from_string(email, defanged_urls=False):
+def parse_email_from_string(email, defanged_urls=False, sanitize_urls=False):
+
     results = []
 
     d = {}
@@ -283,7 +284,7 @@ def parse_email_from_string(email, defanged_urls=False):
     attachments = get_messages_as_attachments(message)
 
     # get urls from message body
-    d['urls'] = urls = extract_urls(mail_parts, defanged_urls=defanged_urls)
+    d['urls'] = urls = extract_urls(mail_parts, defanged_urls=defanged_urls, sanitize_urls=sanitize_urls)
 
     # get BTC addresses from message body
     d['btcs'] = btcs = extract_btcs(mail_parts)

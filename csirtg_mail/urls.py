@@ -156,7 +156,7 @@ def _extract_urls_html(body, defanged_urls=False, images=False):
     return urls
 
 
-def extract_urls(content, html=False, defanged_urls=False):
+def extract_urls(content, html=False, defanged_urls=False, sanitize_urls=False):
     urls = set()
 
     from .constants import PYVERSION
@@ -169,6 +169,16 @@ def extract_urls(content, html=False, defanged_urls=False):
             urls = _extract_urls_html(content, defanged_urls=defanged_urls)
         else:
             urls = _extract_urls_text(content, defanged_urls=defanged_urls)
+
+        # check do we want to strip parameters from URLs, i.e. remove '?foo=bar'
+        if sanitize_urls:
+            sanitized_urls = set()
+            for url in urls:
+                if '?' in url: # if this URL has parameters
+                    param_start = url.index('?')
+                    s_url = url[:param_start]
+                    sanitized_urls.add(s_url) # Add the sanitized URL to the sanitized set
+            urls = sanitized_urls # replace the set we are returning with the sanitized set
     else:
         return urls
 
