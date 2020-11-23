@@ -1,0 +1,447 @@
+Delivered-To: sdfsdfsfsdfdsf@gmail.com
+Received: by 2002:a26:807:0:0:0:0:0 with SMTP id 7csp869797yai;
+        Thu, 15 Oct 2020 14:39:53 -0700 (PDT)
+X-Received: by 2002:a9d:3787:: with SMTP id x7mr357634otb.165.1602797993429;
+        Thu, 15 Oct 2020 14:39:53 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1602797993; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Plz+u53IjcQAw6U6GUEzBIzVuHZi9yD1jVr+Q1JI4ZAVvzae9sKIbqT8d6tSsu4sKt
+         WPTIy/5tNCUexVg9WZmlrjjIyZqjinHQPrCDrxWJ+kiqcON0E56GWd1RtSDS55ie8jdk
+         hNdVHH+Mu9pozg7Dh9KDDdc0Q0NAlr1oKmEeDPVIR8Hb6Zl2XmevIElW73H3sEEFpxAD
+         8LBKYpJVlbdBXApmTY2NdtmpsQY9AJwav4UnJb5PYp4/hX6NMq8UqoKwxrjLQKfeswyT
+         t2WV5fOaxzv9IfwHcIKStVauRGujCI7+hoeoQD6OjskHow7upAmj91X6+xgSmKNw9Mt/
+         xzMQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=TSNi6uapYU+dwW2J2S/qxJtjzpAT+irr44T/zkvC0ps=;
+        b=viccnI2F/w17MI4T+q2l8qmv6AQ/zMaM6t66DPPOOcMOvrOyzTiHPsKMCvSf4zAoRl
+         u7tVXpbZ0tFPm0lC7V0PWpiZZSlfSQsd5e+GRObwJVv+v22g5mDq7MsRjVLNcq6oeDi9
+         vnpMzvVfg1lYGmkyI8whqBRPbz443UIqu+jI+nB1EEV7cNDW3EKrWKiLNMMibeWhqDJG
+         d9SNcVqmK35YCgrkLrXo2cEne44FP9BizNCxQYPSnvgcBoa4WWdKZG9M+FZl5xitHjTW
+         VStLppyjxxX7Kl46CgC7lOXY0mGW4fbBiVNtqT2Hw76jJAwWqaYjnI76x329lmG9W+nk
+         WVQw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@example-com.20150623.gappssmtp.com header.s=20150623 header.b=CET1J063;
+       spf=neutral (google.com: 209.85.220.65 is neither permitted nor denied by best guess record for domain of bob@example.com) smtp.mailfrom=bob@example.com
+Return-Path: <bob@example.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id v4sor112861ots.32.2020.10.15.14.39.53
+        for <sdfsdfsfsdfdsf@gmail.com>
+        (Google Transport Security);
+        Thu, 15 Oct 2020 14:39:53 -0700 (PDT)
+Received-SPF: neutral (google.com: 209.85.220.65 is neither permitted nor denied by best guess record for domain of bob@example.com) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@example-com.20150623.gappssmtp.com header.s=20150623 header.b=CET1J063;
+       spf=neutral (google.com: 209.85.220.65 is neither permitted nor denied by best guess record for domain of bob@example.com) smtp.mailfrom=bob@example.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=example-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=TSNi6uapYU+dwW2J2S/qxJtjzpAT+irr44T/zkvC0ps=;
+        b=CET1J0635MZzi4U9lX7mTHPw8j+dUcFrPe7IosFyKiPbpOmC/0qtmg0zxloI8H3l0v
+         PFYuny1j5VF3m01oha8PhXrEtUrzl5z/U+HyLR+2ULek0vNZmHvKld+GMQhCrIhqKsjl
+         vW0NY1i+SutLQyXlqwrOq1bb5QKUUzTwvqQUFWe0Z7a2D9u2Jtm3zed1I5058qkNccwb
+         RKt1e4FOE0Pa6tuITBb549LqPtX3slcOVxIMYtDJer2j79gfdw87JU6EeAfvwdPJtGyd
+         E4WPtvpzmsbe8EvRJG/M6TrqL26WNUTuxzoS9q0tWtheNON25M+PuhhNbyf0FXwu0fnb
+         /SqA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=TSNi6uapYU+dwW2J2S/qxJtjzpAT+irr44T/zkvC0ps=;
+        b=IDd/8qFVhqm9jcJBxo8yTybDyNdB/TPXXxLLCmZY663fEcY3Qjdio29LCe4OCzo688
+         atwy+4xvuNQHkg0F8jEKD69EvJbFG2fJDgy2Sd/lvHw7SOWM9eX/xB/tW3viTq4Svokh
+         yNOyESUV8JmCGMrvfq7M5Ze2YICnKyiTmeNxTcaMpxSkQdtfEwEwkp3l/2DgWEAunesp
+         boi/oxzVOcBninyXnHebinop/PcTlU7qoqv1lnH+SoC88anzAhWS+lVXbmSSOwLJTh3S
+         sMSyRfY+ieAIZWtPhMhN9wQdtqzAozVr5DzIjIuz8yO5tViVQIWhxMPG45SgCUISnH56
+         cdsw==
+X-Gm-Message-State: AOAM532FPh/dCaQXq5b3X5z7qjmduENSyNTubpycdmJCgUC/XImAoEwM
+	LPFHd7r09piSKnWZL/bfQaPX+1AW2EYS31I1NTOr8xIRm5g=
+X-Google-Smtp-Source: ABdhPJyU49MDIjElMTKVOMfTKfq65Y2riMJ2tTeCbNBBMiNZiaK0YNIDRL5L7UZf5ceO86hf1eFH6qV82l+RfF1gP3Y=
+X-Received: by 2002:a9d:68d9:: with SMTP id i25mr368072oto.11.1602797992584;
+ Thu, 15 Oct 2020 14:39:52 -0700 (PDT)
+MIME-Version: 1.0
+From: bob <bob@example.com>
+Date: Fri, 16 Oct 2020 10:39:41 +1300
+Message-ID: <CAHF86nJsxukUU0xZqf0=NqJ8=K+skKL_xxuD+7PF=gq=32ntkw@mail.gmail.com>
+Subject: Test multipart
+To: sdfsdfsfsdfdsf@gmail.com
+Content-Type: multipart/mixed; boundary="000000000000ff200b05b1bc7c36"
+
+--000000000000ff200b05b1bc7c36
+Content-Type: multipart/alternative; boundary="000000000000ff200905b1bc7c34"
+
+--000000000000ff200905b1bc7c34
+Content-Type: text/plain; charset="UTF-8"
+
+This is a test of multiple attachments
+
+--000000000000ff200905b1bc7c34
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">This is a test of multiple attachments</div>
+
+--000000000000ff200905b1bc7c34--
+--000000000000ff200b05b1bc7c36
+Content-Type: message/rfc822; name="single_plain_01.eml"
+Content-Disposition: attachment; filename="single_plain_01.eml"
+Content-Transfer-Encoding: 8bit
+Content-ID: <f_kgbcix7d0>
+X-Attachment-Id: f_kgbcix7d0
+
+Delivered-To: phish@csirtgadgets.org
+Received: by 10.112.40.50 with SMTP id u18csp916705lbk;
+        Sun, 19 Apr 2015 05:50:04 -0700 (PDT)
+X-Received: by 10.42.151.4 with SMTP id c4mr13784232icw.77.1429447803846;
+        Sun, 19 Apr 2015 05:50:03 -0700 (PDT)
+Return-Path: <advertisebz09ua@gmail.com>
+Received: from gmail.com ([61.72.137.254])
+        by mx.google.com with SMTP id s93si13575887ioe.52.2015.04.19.05.50.00
+        for <phish@csirtgadgets.org>;
+        Sun, 19 Apr 2015 05:50:03 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning advertisebz09ua@gmail.com does not designate 61.72.137.254 as permitted sender) client-ip=61.72.137.254;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning advertisebz09ua@gmail.com does not designate 61.72.137.254 as permitted sender) smtp.mail=advertisebz09ua@gmail.com;
+       dmarc=fail (p=NONE dis=NONE) header.from=gmail.com
+Message-ID: <BE5B7E8D.883B43A2@gmail.com>
+Date: Sun, 19 Apr 2015 05:24:33 -0700
+Reply-To: "HENRY" <advertisebz09ua@gmail.com>
+From: "HENRY" <advertisebz09ua@gmail.com>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.19) Gecko/20081209 Thunderbird/2.0.0.19
+MIME-Version: 1.0
+To: <phish@csirtgadgets.org>
+Subject: Boost Social Presence with FB posts likes
+Content-Type: text/plain;
+    charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+Hello,
+Boost your Facebook posts with a massive promotion 
+and gain over 10.000 likes in total towards all your posts. 
+
+We can promote up to 20 posts links at a time. 
+
+Increase exposure with guaranteed promotion service.
+
+Use this coupon and get another 10% discount on your purchase
+
+==================
+10% Coupon = EB2CA
+==================
+
+Order today, cheap and guaranteed service:
+http://www.socialservices.cn/detail.php?id=9
+
+Regards
+HENRY
+Â 
+
+
+
+
+
+
+Unsubscribe option is available on the footer of our website
+
+
+
+
+--000000000000ff200b05b1bc7c36
+Content-Type: message/rfc822; name="single_plain_02.eml"
+Content-Disposition: attachment; filename="single_plain_02.eml"
+Content-ID: <f_kgbcix851>
+X-Attachment-Id: f_kgbcix851
+
+Delivered-To: phish@csirtgadgets.org
+Received: by 10.36.23.134 with SMTP id 128csp1617878ith;
+        Mon, 6 Jul 2015 10:49:09 -0700 (PDT)
+X-Received: by 10.55.24.94 with SMTP id j91mr163241qkh.54.1436204949815;
+        Mon, 06 Jul 2015 10:49:09 -0700 (PDT)
+Return-Path: <john@csirtgadgets.org>
+Received: from mail01.csirtgadgets.org (mail02.csirtgadgets.org. [192.168.91.182])
+        by mx.google.com with ESMTPS id j201si21579253qhc.130.2015.07.06.10.49.09
+        for <phish@csirtgadgets.org>
+        (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 06 Jul 2015 10:49:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of john@csirtgadgets.org designates 192.168.91.182 as permitted sender) client-ip=192.168.91.182;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of john@csirtgadgets.org designates 192.168.91.182 as permitted sender) smtp.mail=john@csirtgadgets.org
+Received: from MBP.local (c-192-168-35-200.hsd1.in.comcast.net [192.169.35.200])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	(Authenticated sender: john)
+	by mail01.csirtgadgets.org (Postfix) with ESMTPSA id F1EC11CCC0F0
+	for <phish@csirtgadgets.org>; Mon,  6 Jul 2015 17:49:08 +0000 (UTC)
+To: Phish <phish@csirtgadgets.org>
+From: John <john@csirtgadgets.org>
+Subject: Test email (plain text)
+Message-ID: <559ABF94.20109@mail01.csirtgadgets.org>
+Date: Mon, 6 Jul 2015 13:49:08 -0400
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:38.0)
+ Gecko/20100101 Thunderbird/38.0.1
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+http://www.indiana.edu
+
+John
+
+--000000000000ff200b05b1bc7c36
+Content-Type: message/rfc822; name="single_plain_04.eml"
+Content-Disposition: attachment; filename="single_plain_04.eml"
+Content-Transfer-Encoding: 8bit
+Content-ID: <f_kgbcix8l3>
+X-Attachment-Id: f_kgbcix8l3
+
+Delivered-To: phish@csirtgadgets.org
+Received: by 10.112.40.50 with SMTP id u18csp916705lbk;
+        Sun, 19 Apr 2015 05:50:04 -0700 (PDT)
+X-Received: by 10.42.151.4 with SMTP id c4mr13784232icw.77.1429447803846;
+        Sun, 19 Apr 2015 05:50:03 -0700 (PDT)
+Return-Path: <advertisebz09ua@gmail.com>
+Received: from gmail.com ([61.72.137.254])
+        by mx.google.com with SMTP id s93si13575887ioe.52.2015.04.19.05.50.00
+        for <phish@csirtgadgets.org>;
+        Sun, 19 Apr 2015 05:50:03 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning advertisebz09ua@gmail.com does not designate 61.72.137.254 as permitted sender) client-ip=61.72.137.254;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning advertisebz09ua@gmail.com does not designate 61.72.137.254 as permitted sender) smtp.mail=advertisebz09ua@gmail.com;
+       dmarc=fail (p=NONE dis=NONE) header.from=gmail.com
+Message-ID: <BE5B7E8D.883B43A2@gmail.com>
+Date: Sun, 19 Apr 2015 05:24:33 -0700
+Reply-To: "HENRY" <advertisebz09ua@gmail.com>
+From: "HENRY" <advertisebz09ua@gmail.com>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.19) Gecko/20081209 Thunderbird/2.0.0.19
+MIME-Version: 1.0
+To: <phish@csirtgadgets.org>
+Subject: Boost Social Presence with FB posts likes
+Content-Type: text/plain;
+    charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+Hello,
+Boost your Facebook posts with a massive promotion 
+and gain over 10.000 likes in total towards all your posts. 
+
+We can promote up to 20 posts links at a time. 
+
+Increase exposure with guaranteed promotion service.
+
+Use this coupon and get another 10% discount on your purchase
+
+==================
+10% Coupon = EB2CA
+==================
+
+Order today, cheap and guaranteed service:
+http://www.socialservices.cn:1234/detail.php?id=9
+http://www.socialservices.cn/detail.php?id=9
+http://user:pass@www.socialservices.cn:1234/detail.php?id=9
+http://user:pass@www.socialservices.cn/detail.php?id=9
+http://192.168.1.1:1234/detail.php?id=9
+http://192.168.1.1/detail.php?id=9
+http://user:pass@192.168.1.1:1234/detail.php?id=9
+http://user:pass@192.168.1.1/detail.php?id=9
+http://[2001:db8:3:4::]:1234/detail.php?id=9
+http://[2001:db8:3:4::]/detail.php?id=9
+http://user:pass@[2001:db8:3:4::]:1234/detail.php?id=9
+http://user:pass@[2001:db8:3:4::]/detail.php?id=9
+
+Regards
+HENRY
+Â 
+
+
+
+
+
+
+Unsubscribe option is available on the footer of our website
+
+
+
+
+--000000000000ff200b05b1bc7c36
+Content-Type: message/rfc822; name="single_plain_03.eml"
+Content-Disposition: attachment; filename="single_plain_03.eml"
+Content-Transfer-Encoding: 8bit
+Content-ID: <f_kgbcix8b2>
+X-Attachment-Id: f_kgbcix8b2
+
+Delivered-To: phish@csirtgadgets.org
+Received: by 10.36.23.134 with SMTP id 128csp1617878ith;
+        Mon, 6 Jul 2015 10:49:09 -0700 (PDT)
+X-Received: by 10.55.24.94 with SMTP id j91mr163241qkh.54.1436204949815;
+        Mon, 06 Jul 2015 10:49:09 -0700 (PDT)
+Return-Path: <john@csirtgadgets.org>
+Received: from mail01.csirtgadgets.org (mail02.csirtgadgets.org. [192.168.91.182])
+        by mx.google.com with ESMTPS id j201si21579253qhc.130.2015.07.06.10.49.09
+        for <phish@csirtgadgets.org>
+        (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 06 Jul 2015 10:49:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of john@csirtgadgets.org designates 192.168.91.182 as permitted sender) client-ip=192.168.91.182;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of john@csirtgadgets.org designates 192.168.91.182 as permitted sender) smtp.mail=john@csirtgadgets.org
+Received: from MBP.local (c-192-168-35-200.hsd1.in.comcast.net [192.169.35.200])
+    (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+    (No client certificate requested)
+    (Authenticated sender: john)
+    by mail01.csirtgadgets.org (Postfix) with ESMTPSA id F1EC11CCC0F0
+    for <phish@csirtgadgets.org>; Mon,  6 Jul 2015 17:49:08 +0000 (UTC)
+To: Phish <phish@csirtgadgets.org>
+From: John <john@csirtgadgets.org>
+Subject: Re: Please Help Me Invest $60M U.S.D 
+Message-ID: <559ABF94.20109@mail01.csirtgadgets.org>
+Date: Mon, 6 Jul 2015 13:49:08 -0400
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:38.0)
+ Gecko/20100101 Thunderbird/38.0.1
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Hello friend,
+
+My name is Miss Ammaarah Younis from Libya. I am the only surviving child of Late Colonel Abu Bakr Younis, Libya's former defence minister killed with Late Colonel Muammar Gaddafi in Sirte, Libya.
+
+I am writing from Libya and I have business proposal worth $60M  U.S.D which I will like you to help me claim and Invest in Your country. Presently due to the war here, i can not travel out to go and claim the money and Invest it where it is deposited in offshore country. I will like you to kindly write me at my private email (yyounisammaarah2015@gmail.com) so that I can tell you in details what you are expected to do for me and also for me to send you documents proof of the funds. I am ready to give you half of the money for your help. This will not waste your time.
+
+I hope to hear from you soon.
+
+Ammaarah Younis..
+yyounisammaarah2015@gmail.com
+
+--000000000000ff200b05b1bc7c36
+Content-Type: message/rfc822; name="single_plain_05.eml"
+Content-Disposition: attachment; filename="single_plain_05.eml"
+Content-ID: <f_kgbcix8s4>
+X-Attachment-Id: f_kgbcix8s4
+
+Delivered-To: phish@csirtgadgets.org
+Received: by 10.112.40.50 with SMTP id u18csp916705lbk;
+        Sun, 19 Apr 2015 05:50:04 -0700 (PDT)
+X-Received: by 10.42.151.4 with SMTP id c4mr13784232icw.77.1429447803846;
+        Sun, 19 Apr 2015 05:50:03 -0700 (PDT)
+Return-Path: <advertisebz09ua@gmail.com>
+Received: from gmail.com ([61.72.137.254])
+        by mx.google.com with SMTP id s93si13575887ioe.52.2015.04.19.05.50.00
+        for <phish@csirtgadgets.org>;
+        Sun, 19 Apr 2015 05:50:03 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning advertisebz09ua@gmail.com does not designate 61.72.137.254 as permitted sender) client-ip=61.72.137.254;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning advertisebz09ua@gmail.com does not designate 61.72.137.254 as permitted sender) smtp.mail=advertisebz09ua@gmail.com;
+       dmarc=fail (p=NONE dis=NONE) header.from=gmail.com
+Message-ID: <BE5B7E8D.883B43A2@gmail.com>
+Date: Sun, 19 Apr 2015 05:24:33 -0700
+Reply-To: "HENRY" <advertisebz09ua@gmail.com>
+From: "HENRY" <advertisebz09ua@gmail.com>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.19) Gecko/20081209 Thunderbird/2.0.0.19
+MIME-Version: 1.0
+To: <phish@csirtgadgets.org>
+Subject: Boost Social Presence with FB posts likes
+Content-Type: text/plain;
+    charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+
+Please find the details of the following new Phishing incident:
+
+----------------------
+URL: hxxps://www .blah .blah .com .badness .com /badness.php Brand Targeted: Awesome stuff
+
+Web Host:
+Web Host Country:
+
+
+Please find the details of the following new Phishing incident:
+
+----------------------
+URL: hxxp://www .blah .blah .com .badness .com /wp=stuff/uno/dos/tres/
+Brand Targeted: Awesome stuff
+
+Web Host:
+Web Host Country:
+
+
+
+--000000000000ff200b05b1bc7c36
+Content-Type: message/rfc822; name="single_plain_06.eml"
+Content-Disposition: attachment; filename="single_plain_06.eml"
+Content-Transfer-Encoding: 8bit
+Content-ID: <f_kgbcix8x5>
+X-Attachment-Id: f_kgbcix8x5
+
+Delivered-To: phish@csirtgadgets.org
+Received: by 10.112.40.50 with SMTP id u18csp916705lbk;
+        Sun, 19 Apr 2015 05:50:04 -0700 (PDT)
+X-Received: by 10.42.151.4 with SMTP id c4mr13784232icw.77.1429447803846;
+        Sun, 19 Apr 2015 05:50:03 -0700 (PDT)
+Return-Path: <advertisebz09ua@gmail.com>
+Received: from gmail.com ([61.72.137.254])
+        by mx.google.com with SMTP id s93si13575887ioe.52.2015.04.19.05.50.00
+        for <phish@csirtgadgets.org>;
+        Sun, 19 Apr 2015 05:50:03 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning advertisebz09ua@gmail.com does not designate 61.72.137.254 as permitted sender) client-ip=61.72.137.254;
+Authentication-Results: mx.google.com;
+       spf=softfail (google.com: domain of transitioning advertisebz09ua@gmail.com does not designate 61.72.137.254 as permitted sender) smtp.mail=advertisebz09ua@gmail.com;
+       dmarc=fail (p=NONE dis=NONE) header.from=gmail.com
+Message-ID: <BE5B7E8D.883B43A2@gmail.com>
+Date: Sun, 19 Apr 2015 05:24:33 -0700
+Reply-To: "HENRY" <advertisebz09ua@gmail.com>
+From: "HENRY" <advertisebz09ua@gmail.com>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.19) Gecko/20081209 Thunderbird/2.0.0.19
+MIME-Version: 1.0
+To: <phish@csirtgadgets.org>
+Subject: Boost Social Presence with FB posts likes
+Content-Type: text/plain;
+    charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+You may not know me and you are probably wondering why you are getting this e mail, right?
+
+I'm a hacker who cracked your email and devices a few months ago.
+
+Do not try to contact me or find me, it is impossible, since I sent you an email from YOUR hacked account.
+
+I setup a malware on the adult vids (porno) web-site and guess what, you visited this site to have fun (you know what I mean).
+
+While you were watching videos, your internet browser started out functioning as a RDP (Remote Control) having a keylogger which gave me accessibility to your screen and web cam.
+
+after that, my software program obtained all of your contacts from your Phone, Messenger and email.
+
+You entered a passwords on the websites you visited, and I intercepted it.
+
+Of course you can will change it, or already changed it.
+
+But it doesn't matter, my malware updated it every time.
+
+What did I do?
+
+I backuped phone. All photo, video and contacts.
+
+I created a double-screen video. 1st part shows the video you were watching (you've got a good taste haha . . .), and 2nd part shows the recording of your web cam.
+
+exactly what should you do?
+
+Well, in my opinion, $1000 (USD) is a fair price for our little secret. You'll make the payment by Bitcoin (if you do not know this, search "how to buy bitcoin" in Google).
+
+My Bitcoin wallet Address:
+
+1KhDTLk95fZQBd5tUXj4123459bBAji2DB
+
+(It is cAsE sensitive, so copy and paste it)
+
+Important:
+
+You have 48 hour in order to make the payment. (I've a unique pixel in this e mail, and at this moment I know that you have read through this email message).
+
+To track the reading of a message and the actions in it, I use the facebook pixel.
+
+Thanks to them. (Everything that is used for the authorities can help us.)
+
+More you can find out by the link.
+
+
+If I do not get the BitCoins, I will certainly send out your video recording to all of your contacts including relatives, coworkers, and so on. Having said that, if I receive the payment, I'll destroy the video immidiately. If you need evidence, reply with "Yes!" and I will certainly send out your video recording to your 6 contacts. It is a non-negotiable offer, that being said don't waste my personal time and yours by responding to this message.
+
+
+
+--000000000000ff200b05b1bc7c36--
