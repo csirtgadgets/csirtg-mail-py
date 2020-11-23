@@ -2,7 +2,7 @@ import csirtg_mail
 
 TEST_FILE = 'samples/email/single_plain_05.eml'
 
-with open(TEST_FILE) as f:
+with open(TEST_FILE, encoding='utf8') as f:
     email = f.read()
 
 results = csirtg_mail.parse_email_from_string(email, defanged_urls=True)

@@ -2,7 +2,7 @@ import csirtg_mail
 
 TEST_FILE = 'samples/email/multi_mixed_alternative_plain_html_01.eml'
 
-with open(TEST_FILE) as f:
+with open(TEST_FILE, encoding='utf8') as f:
     email = f.read()
 
 results = csirtg_mail.parse_email_from_string(email)
@@ -21,5 +21,5 @@ def test_message_headers_to():
 
 
 def test_message_headers_subject():
-    assert results[0]['headers']['subject'][0].startswith('Changes in Your Booking Nr:48322')
-
+    assert results[0]['headers']['subject'][0].startswith(
+        'Changes in Your Booking Nr:48322')

@@ -3,7 +3,7 @@ from pprint import pprint
 
 TEST_FILE = 'samples/email/multi_mixed_msdoc.eml'
 
-with open(TEST_FILE) as f:
+with open(TEST_FILE, encoding='utf8') as f:
     email = f.read()
 
 

@@ -2,7 +2,7 @@ import csirtg_mail
 
 TEST_FILE = 'samples/email/single_plain_01.eml'
 
-with open(TEST_FILE) as f:
+with open(TEST_FILE, encoding='utf8') as f:
     email = f.read()
 
 results = csirtg_mail.parse_email_from_string(email)
@@ -18,4 +18,3 @@ def test_message_parts():
 
 def test_extract_urls():
     assert "http://www.socialservices.cn/detail.php?id=9" in results[0]['urls']
-
