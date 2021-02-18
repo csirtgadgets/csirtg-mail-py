@@ -7,7 +7,7 @@ if PYVERSION > 2:
     with open(TEST_FILE, encoding='utf-8') as f:
         email = f.read()
 else:
-    with open(TEST_FILE) as f:
+    with open(TEST_FILE, encoding='utf8') as f:
         email = f.read()
 
 results = csirtg_mail.parse_email_from_string(email)
@@ -18,5 +18,7 @@ def test_message_headers():
 
 
 def test_message_parts():
-    assert results[0]['mail_parts'][0]['decoded_body'].startswith('See the attached zip file')
-    assert results[0]['mail_parts'][1]['base64_encoded_payload'].decode('utf-8').startswith('UEsDBBQACAAIAO')
+    assert results[0]['mail_parts'][0]['decoded_body'].startswith(
+        'See the attached zip file')
+    assert results[0]['mail_parts'][1]['base64_encoded_payload'].decode(
+        'utf-8').startswith('UEsDBBQACAAIAO')

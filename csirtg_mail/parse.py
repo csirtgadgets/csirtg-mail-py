@@ -1,3 +1,6 @@
+from .constants import PYVERSION
+import pyzmail
+from .utils import parse_headers
 import base64
 import sys
 import chardet
@@ -166,7 +169,6 @@ def process_part_type(p, d):
             d['base64_encoded_payload'] = base64.b64encode(p.get_payload())
         elif p.disposition == 'attachment':
             d['base64_encoded_payload'] = base64.b64encode(p.get_payload())
-
     return d
 
 
@@ -261,8 +263,8 @@ def parse_attached_emails(attachments):
                     base64.b64decode(a['attachment']).decode())
             else:
                 d = parse_email_from_string(a['attachment'])
-            flattened = flatten(d)
-    return flattened
+            flattened.append(flatten(d))
+    return flatten(flattened)
 
 
 def parse_email_from_string(email, defanged_urls=False, sanitize_urls=False):
@@ -284,7 +286,8 @@ def parse_email_from_string(email, defanged_urls=False, sanitize_urls=False):
     attachments = get_messages_as_attachments(message)
 
     # get urls from message body
-    d['urls'] = urls = extract_urls(mail_parts, defanged_urls=defanged_urls, sanitize_urls=sanitize_urls)
+    d['urls'] = urls = extract_urls(
+        mail_parts, defanged_urls=defanged_urls, sanitize_urls=sanitize_urls)
 
     # get BTC addresses from message body
     d['btcs'] = btcs = extract_btcs(mail_parts)
@@ -304,9 +307,6 @@ def parse_email_from_string(email, defanged_urls=False, sanitize_urls=False):
 
 
 # testing- use functions above
-from .utils import parse_headers
-import pyzmail
-from .constants import PYVERSION
 
 
 def from_string(data):
