@@ -161,14 +161,18 @@ def process_part_type(p, d):
         elif p.type == 'text/plain' or p.type == 'text/html' and p.disposition == 'inline':
             d = get_decoded_body(p, d)
         elif p.type.startswith('application'):
-            d['base64_encoded_payload'] = base64.b64encode(p.get_payload())
+            d['base64_encoded_payload'] = base64.b64encode(
+                p.get_payload()).decode('utf-8')
         elif p.type.startswith('image'):
-            d['base64_encoded_payload'] = base64.b64encode(p.get_payload())
+            d['base64_encoded_payload'] = base64.b64encode(
+                p.get_payload()).decode('utf-8')
     else:
         if p.type.startswith('application'):
-            d['base64_encoded_payload'] = base64.b64encode(p.get_payload())
+            d['base64_encoded_payload'] = base64.b64encode(
+                p.get_payload()).decode('utf-8')
         elif p.disposition == 'attachment':
-            d['base64_encoded_payload'] = base64.b64encode(p.get_payload())
+            d['base64_encoded_payload'] = base64.b64encode(
+                p.get_payload()).decode('utf-8')
     return d
 
 
