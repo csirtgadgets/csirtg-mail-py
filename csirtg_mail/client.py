@@ -30,8 +30,10 @@ def main():
     )
 
     p.add_argument("-f", "--file", dest="file", help="specify email file")
-    p.add_argument("-d", "--debug", help="enable debugging", action="store_true")
-    p.add_argument("-s", "--sanitize", help="strip parameters (...?foo=bar) from parsed URLs", action="store_true")
+    p.add_argument("-d", "--debug", help="enable debugging",
+                   action="store_true")
+    p.add_argument("-s", "--sanitize",
+                   help="strip parameters (...?foo=bar) from parsed URLs", action="store_true")
     p.add_argument("--urls", help="print URLS to stdout", action="store_true")
 
     args = p.parse_args()
@@ -49,13 +51,14 @@ def main():
 
     # get email from file or stdin
     if options.get("file"):
-        with open(options["file"]) as f:
+        with open(options["file"],  errors='ignore') as f:
             email = f.read()
     else:
         email = sys.stdin.read()
 
     # parse email message
-    results = parse_email_from_string(email, sanitize_urls=options.get("sanitize"))
+    results = parse_email_from_string(
+        email, sanitize_urls=options.get("sanitize"))
 
     if args.urls:
         for e in results:
