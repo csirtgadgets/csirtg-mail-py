@@ -20,5 +20,5 @@ def test_message_headers():
 def test_message_parts():
     assert results[0]['mail_parts'][0]['decoded_body'].startswith(
         'See the attached zip file')
-    assert results[0]['mail_parts'][1]['base64_encoded_payload'].decode(
-        'utf-8').startswith('UEsDBBQACAAIAO')
+    assert results[0]['mail_parts'][1]['base64_encoded_payload'].startswith(
+        'UEsDBBQACAAIAO')
