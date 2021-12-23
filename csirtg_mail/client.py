@@ -34,6 +34,8 @@ def main():
                    action="store_true")
     p.add_argument("-s", "--sanitize",
                    help="strip parameters (...?foo=bar) from parsed URLs", action="store_true")
+    p.add_argument("--defang",
+                   help="return defanged parsed URLs", action="store_true")
     p.add_argument("--urls", help="print URLS to stdout", action="store_true")
 
     args = p.parse_args()
@@ -58,7 +60,10 @@ def main():
 
     # parse email message
     results = parse_email_from_string(
-        email, sanitize_urls=options.get("sanitize"))
+        email,
+        sanitize_urls=options.get("sanitize"),
+        defanged_urls=options.get("defang")
+    )
 
     if args.urls:
         for e in results:

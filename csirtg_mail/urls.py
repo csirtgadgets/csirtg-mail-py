@@ -9,7 +9,7 @@ except ImportError:
 from pprint import pprint
 
 RE_URL_PLAIN = r'(https?://[^\s>|^\"]+)'
-RE_URL_DEFANGED = r'((?:hxxps?:\/\/.*?(?=\/))(?:.*?(?=\s)))'
+RE_URL_DEFANGED = r'((?:hxxps?\[?:\]?\/\/.*?(?=\/))(?:.*?(?=\s)))'
 RE_IPV4 = re.compile(
     '^(.+:.+@)?(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(:\d+)?$')
 # http://stackoverflow.com/a/17871737
@@ -174,11 +174,12 @@ def extract_urls(content, html=False, defanged_urls=False, sanitize_urls=False):
         if sanitize_urls:
             sanitized_urls = set()
             for url in urls:
-                if '?' in url: # if this URL has parameters
+                if '?' in url:  # if this URL has parameters
                     param_start = url.index('?')
                     s_url = url[:param_start]
-                    sanitized_urls.add(s_url) # Add the sanitized URL to the sanitized set
-            urls = sanitized_urls # replace the set we are returning with the sanitized set
+                    # Add the sanitized URL to the sanitized set
+                    sanitized_urls.add(s_url)
+            urls = sanitized_urls  # replace the set we are returning with the sanitized set
     else:
         return urls
 
