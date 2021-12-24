@@ -15,3 +15,5 @@ def test_message_headers():
 def test_extract_urls():
     print(results[0]['urls'])
     assert "hxxp://www.blah.blah.com.badness.com/wp=stuff/uno/dos/tres/" in results[0]['urls']
+    assert "hxxp[:]//blah[.]com/Login.php" in results[0]['urls']
+    assert "hxxps://www.blah.blah.com.badness.com/badness.php" in results[0]['urls']
